@@ -147,6 +147,9 @@ Used HOUR(timestamp) in listening_logs to identify users that listen between 12 
 
 Query:
 ```bash
+SELECT DISTINCT user_id as early_morning_users
+FROM listening_logs
+WHERE HOUR(timestamp) >= 0 AND HOUR(timestamp) < 5
 ```
 
 Example Output:
